@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int t, n, x;
+bool lastA = false;
+bool lastB = false;
+bool firstA = false;
+bool firstB = false;
+ 
+int main(){
+    cin >> t;
+ 
+    for (int i = 1; i <= t; i++){
+            cin >> n;
+            cin >> x;
+ 
+            if (x)
+                firstA = true;
+            else
+                firstB = true;
+            for (int j = 1; j <= n - 1; j++){
+                    cin >> x;
+                    if (x){
+                        lastA = true;
+                        lastB = false;
+                    } else {
+                        lastA = false;
+                        lastB = true;
+                    }
+            }
+ 
+            if (lastA || firstA) {
+                cout << "Alice" << "\n";
+            } else {
+                cout << "Bob" << "\n";
+            }
+ 
+            lastA = false;
+            lastB = false;
+            firstA = false;
+            firstB = false;
+ 
+    }
+    return 0;
+}
