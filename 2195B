@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int group(int x){
+  while (x % 2 == 0) x /= 2;
+  return x;
+}
+ 
+int t, n, a;
+bool ok = true;
+ 
+int main(){
+  cin >> t;
+  
+  while (t--){
+    cin >> n;
+    vector<int> v(n+1), pos(n+1);
+    
+    for (int i = 1; i <= n; i++){
+      cin >> v[i];
+      pos[v[i]] = i;
+    }
+    
+    for (int i = 1; i <= n; i++){
+      if (group(pos[i]) != group(i))
+         ok = false;
+    }
+    if (ok)
+    cout << "YES" << "\n";
+    else
+    cout << "NO" << "\n";
+    ok = true;
+  }
+}
