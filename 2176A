@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int t, n, j;
+int a[101];
+int cnt;
+int nregale;
+bool existamaimare;
+ 
+int main(){
+    cin >> t;
+ 
+    while (t--){
+        cin >> n;
+        
+        for (int i = 0; i < n; i++)
+            cin >> a[i];
+        
+        int mx = 0;
+        
+        int cmx = 0;
+        
+        for (int i = 0; i < n; i++) {
+        mx = max(mx, a[i]);
+        if (a[i] == mx) cmx++;
+    }
+        
+        cout << n -  cmx << "\n";
+        cnt = 0;
+        existamaimare = false;
+    }
+        
+ 
+    return 0;
+}
