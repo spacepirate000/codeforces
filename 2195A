@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int t, n, x;
+bool ok67 = false;
+ 
+int main(){
+  cin >> t;
+  
+  while (t--){
+    cin >> n;
+    
+    for (int i = 1; i <= n; i++){
+      cin >> x;
+      if (x == 67)
+         ok67 = true;
+    }
+    
+    if (ok67)
+      cout << "YES" << "\n";
+    else
+      cout << "NO" << "\n";
+      
+    ok67 = false;
+  }
+  return 0;
+}
