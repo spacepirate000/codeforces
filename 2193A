@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int t, n, s, x, x1;
+ 
+int main(){
+  cin >> t;
+  
+  while (t--){
+    cin >> n >> s >> x;
+    bool ok;
+    int sum = 0;
+    
+    for (int i = 1; i <= n; i++){
+      cin >> x1;
+      sum += x1;
+    }
+    
+    if (s >= sum && (s - sum) % x == 0)
+       ok = true;
+    else
+       ok = false;
+       
+    cout << (ok ? "YES" : "NO") << "\n";
+  }
+  
+  return 0;
+}
