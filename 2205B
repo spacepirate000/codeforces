@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int t, n, k;
+ 
+int main(){
+    cin >> t;
+ 
+    while (t--){
+            cin >> n;
+            k = 1;
+ 
+            for (int j = 2; j * j <= n; j++){
+                    if (n % j == 0){
+                            k *= j;
+                            while (n % j == 0){
+                                    n /= j;
+                            }
+                    }
+            }
+            if (n > 1)
+                k *= n;
+            cout << k << "\n";
+    }
+    return 0;
+}
